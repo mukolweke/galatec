@@ -1,0 +1,32 @@
+{% include 'galatec/base.html' %}
+
+{% block title%}Shopping PAGE{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<div class="container">
+    <h2>{{ category.category_name }}</h2>
+    <div class="panel panel-default" style="margin-top:50px;padding:10px;">
+        <div class="panel-body">
+            <ul>
+                {% for pro in category.products_set.all %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/index.svg' %}"/>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{{pro.product_name}}</h3>
+                        <p>{{pro.product_description }}<br/><br/><span class="glyphicon">$</span>&nbsp;{{pro.product_price}}&nbsp;<span class="glyphicon">/=</span></p>
+                        <button type="button" class="btn btn-success"><span
+                                class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Add to Chart
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

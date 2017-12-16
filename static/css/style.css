@@ -1,0 +1,46 @@
+.jumbotron {
+    height:480px;
+    background: white url('../img/jumbo.jpg') no-repeat;
+    text-align: center;
+    color: #563d7c ;
+}
+
+.footer{
+    text-align: center;
+}
+
+#login_page {
+
+}
+
+#login-heading{
+    margin-top:200px;
+}
+.panel-login{
+    height: 300px;width:500px;
+    margin-left:510px;
+    background-color:#fcf8e3;
+    color:#8a6d3b;
+}
+
+#register-heading{
+    margin-top:50px;
+}
+
+.panel-register{
+    height: 650px;width:600px;
+    margin-left:500px;
+    background-color:#fcf8e3;
+    color:#8a6d3b;
+}
+
+#forgot-heading{
+    margin-top:50px;
+}
+
+.panel-forget{
+    height: 300px;width:500px;
+    margin-left:510px;
+    background-color:#fcf8e3;
+    color:#8a6d3b;
+}

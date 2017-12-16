@@ -1,0 +1,65 @@
+{% extends 'galatec/base.html' %}
+
+{% block title%}Shopping Chart{% endblock %}
+
+
+{% block content %}
+{% load staticfiles %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron" style="height:300px;">
+    <div class="container">
+        <h2 style="margin-top:50px;">Galatec Shopping List</h2>
+    </div>
+</div>
+
+<div class="container" style="margin-bottom:100px;">
+    <div class="panel panel-default" style="padding:10px;">
+        <div class="panel-body">
+            <ul>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/index.svg' %}"/>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Product Name</h3>
+                        <p>Note that panel footers do not inherit colors and borders when using contextual variations as
+                            they are not meant to be in the foreground.
+                            <br/><br/>
+                            <span class="glyphicon">$</span>&nbsp;200&nbsp;<span
+                                    class="glyphicon">/=</span></p>
+                        <button type="button" class="btn btn-success"><span
+                                class="glyphicon glyphicon-trash"></span>&nbsp; Remove Item
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/index.svg' %}"/>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Product Name</h3>
+                        <p>Note that panel footers do not inherit colors and borders when using contextual variations as
+                            they are not meant to be in the foreground.
+                            <br/><br/>
+                            <span class="glyphicon">$</span>&nbsp;900&nbsp;<span
+                                    class="glyphicon">/=</span></p>
+                        <button type="button" class="btn btn-success"><span
+                                class="glyphicon glyphicon-trash"></span>&nbsp; Remove Item
+                        </button>
+                    </div>
+                </div>
+            </ul>
+            <div style="margin-left:900px;" >
+                <form action="">
+                    <button type="button" class="btn btn-success"><span
+                            class="glyphicon glyphicon-ok"></span>&nbsp; Make Order
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div> <!-- /container -->
+
+{% endblock %}
