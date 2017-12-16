@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from . import views
 
-app_name = 'gala'
+app_name = 'galatec'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

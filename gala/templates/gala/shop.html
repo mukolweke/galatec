@@ -1,0 +1,79 @@
+{% extends 'gala/base.html' %}
+
+{% block title%}Admin ShopPage{% endblock %}
+
+{% load staticfiles %}
+{% block content %}
+<div class="container" style="margin-top:70px;">
+    <h2>Categories Available</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-10">
+                {% if all_category %}
+                {% for category in all_category %}
+                <ul>
+                    <li>{{ category.category_name }}&nbsp;<span class="badge">42</span></li>
+                </ul>
+                {% endfor %}
+                {% else %}
+                <h3>You don't have any Categories</h3>
+                {% endif %}
+            </div>
+            <div class="col-md-2">
+                <a href="#"><span class="label label-primary "><span class="glyphicon glyphicon-plus"></span>&nbsp; Add Category</span></a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>Products Available</h2>
+    <form class="pull-right" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    {% if all_category %}
+    {% for category in all_category %}
+
+    <div class="panel panel-default" style="margin-top:50px;padding:10px;">
+        <div class="panel-body">
+            <h2>{{ category.category_name }}</h2>
+            <ul>
+                {% for pro in category.products_set.all %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/index.svg' %}"/>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{{pro.product_name}}</h3>
+                        <p>{{pro.product_description }}<br/><br/><span class="glyphicon">
+                            <div class="col-md-6">
+                                $</span>&nbsp;{{pro.product_price}}&nbsp;<span
+                                class="glyphicon">/=</span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-success"><span
+                                class="glyphicon glyphicon-pencil"></span>&nbsp; Edit
+                        </button>
+                        <button type="button" class="btn btn-danger"><span
+                                class="glyphicon glyphicon-trash"></span>
+                        </button>
+                        </p>
+                    </div>
+                </div>
+        </div>
+        <hr>
+        {% endfor %}
+
+
+        </ul>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<h3>You don't have any Categories</h3>
+{% endif %}
+</div>
+
+{% endblock %}
