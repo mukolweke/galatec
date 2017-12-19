@@ -2,6 +2,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from . import views
+from accounts.views import (login_view, register_view,logout_view)
 
 app_name = 'galatec'
 
@@ -11,7 +12,7 @@ urlpatterns = [
     # home page
     url(r'^$', views.index, name='index'),
     url(r'^gala/', include('gala.urls'), name='gala'),
-    url(r'^login/', views.login, name='login'),
+        url(r'^login/', login_view, name='login'),
     url(r'^forgot', views.forget, name='forget'),
     url(r'^register', views.registration, name='register'),
     # shop url page

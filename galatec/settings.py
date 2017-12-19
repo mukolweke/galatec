@@ -21,6 +21,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig',
     'gala.apps.GalaConfig',
     'shop.apps.ShopConfig',
     'videos.apps.VideosConfig',
