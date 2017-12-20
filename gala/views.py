@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from shop.models import Category
+from shop.models import Category,Products
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.views import generic
+from django.core.urlresolvers import reverse_lazy
 
 
 # Create your views here.
@@ -19,6 +21,21 @@ class ShopView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Category
     template_name = 'gala/details.html'
+
+
+class ProductCreate(CreateView):
+    model = Products
+    fields = ['product_name',  'product_description', 'product_count', 'product_price']
+
+
+class ProductUpdate(UpdateView):
+    model = Products
+    fields = ['product_name',  'product_description', 'product_count', 'product_price']
+
+
+class ProductDelete(DeleteView):
+    model = Products
+    success_url = reverse_lazy('gala:detail')
 
 
 def videos(request):

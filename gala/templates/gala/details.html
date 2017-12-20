@@ -4,27 +4,61 @@
 
 {% block content %}
 {% load staticfiles %}
-<div class="container">
-    <h2>{{ category.category_name }}</h2>
-    <div class="panel panel-default" style="margin-top:50px;padding:10px;">
-        <div class="panel-body">
-            <ul>
-                {% for pro in category.products_set.all %}
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="{{ category.category_logo.url }}"/>
-                    </div>
-                    <div class="col-md-6">
-                        <h3>{{pro.product_name}}</h3>
-                        <p>{{pro.product_description }}<br/><br/><span class="glyphicon">$</span>&nbsp;{{pro.product_price}}&nbsp;<span class="glyphicon">/=</span></p>
-                        <button type="button" class="btn btn-success"><span
-                                class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Add to Chart
-                        </button>
+<div class="container details-container">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ category.category_logo.url }}" class="img-logo" style="height:200px;"/><br/><br/>
+            <h4>Name :&nbsp;{{ category.category_name }}</h4><br/>
+            <h4>Desc :&nbsp;{{ category.category_desc }}</h4><br/>
+            <h4>Items Count : &nbsp;<span class="badge">42</span></h4><br/>
+            <a href="{% url 'gala:category-edit' category.id %}" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Edit Category
+                </a>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span>&nbsp; View
+                    All Items
+                </button>
+                <button type="button" class="btn btn-primary-inverse"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add
+                    New Items
+                </button>
+
+                <div class="panel panel-default" style="margin-top:50px;">
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Count</th>
+                                <th>Options</th>
+                            </tr>
+                            {% for pro in category.products_set.all %}
+                            <tr>
+                                <td>{{pro.product_name}}</td>
+                                <td>{{pro.product_description }}</td>
+                                <td>{{pro.product_price}}&nbsp;</td>
+                                <td>50</td>
+                                <td>
+                                    <button type="button" class="btn btn-info"><span
+                                            class="glyphicon glyphicon-pencil"></span></button>
+                                    <button type="button" class="btn btn-danger"><span
+                                            class="glyphicon glyphicon-trash"></span></button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
                     </div>
                 </div>
+
                 <hr>
-                {% endfor %}
-            </ul>
+
+                <div class="panel panel-default" style="margin-top:50px;">
+                    <div class="panel-body">
+                        <a href="{% url 'gala:product-add' %}">Add product</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

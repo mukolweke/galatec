@@ -1,27 +1,29 @@
-{% include 'galatec/base.html' %}
+{% include 'gala/base.html' %}
 
 {% block title%}Add new category{% endblock %}
 
 {% block content %}
 {% load staticfiles %}
-<div class="container">
+<div class="container" style="margin-top:50px;">
      <div class="row">
-         <div class="col-sm-12 col-md-7">
-             <div class="panel panel-default">
-                 <div class="panel-body">
-
-                     <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+         <div class="col-md-2 clearfix"></div>
+         <div class="col-md-8">
+             <div class="panel panel-default add-cat-panel">
+                <div class="panel-body">
+                    <h2 class="text-center">Category</h2>
+                    <form class="form-horizontal" style="margin-top:30px;" action="" method="post" enctype="multipart/form-data">
                          {% csrf_token %}
                          {% include 'shop/form-template.html' %}
                          <div class="form-group">
-                             <div class="col-sm-offset-3 col-sm-9">
-                                 <button type="submit" class="btn btn-success">Submit</button>
+                             <div class="col-sm-offset-3 col-md-9">
+                                 <button type="submit" class="btn btn-cat btn-success"><span class="glyphicon glyphicon-plus"></span>&nbsp; Category</button>
                              </div>
                          </div>
                      </form>
-                 </div>
+                </div>
              </div>
          </div>
+         <div class="col-md-2 clearfix"></div>
      </div>
 </div>
 

@@ -9,20 +9,22 @@ from accounts.views import (login_view, register_view,logout_view)
 app_name = 'galatec'
 
 urlpatterns = [
+    # django admin-dev page only
     url(r'^admin/', admin.site.urls),
-
-    # home page
+    # admin user section
+    url(r'^galaAdmin/', include('gala.urls'), name='gala'),
+    # customer user section
     url(r'^$', views.index, name='index'),
-    url(r'^gala/', include('gala.urls'), name='gala'),
+    # customer access
+    url(r'^shop/', include('shop.urls'), name='shop'),
+    url(r'^videos/', include('videos.urls'), name='videos'),
+    url(r'^chart/', views.chart, name='chart'),
+    # accounts
     url(r'^login/', login_view, name='login'),
     url(r'^forgot', views.forget, name='forget'),
     url(r'^register', views.registration, name='register'),
-    # shop url page
-    url(r'^shop/', include('shop.urls'), name='shop'),
-    # videos url page
-    url(r'^videos/', include('videos.urls'), name='videos'),
-    # chart url page
-    url(r'^chart/', views.chart, name='chart'),
+
+
 ]
 
 if settings.DEBUG:

@@ -1,3 +1,7 @@
+a {
+    text-decoration:none;
+}
+
 .jumbotron {
     height:480px;
     background: white url('../img/jumbo.jpg') no-repeat;

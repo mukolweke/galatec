@@ -1,5 +1,5 @@
 from .models import Products,Category
-from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views import generic
 from django.core.urlresolvers import reverse_lazy
 
@@ -18,13 +18,15 @@ class DetailView(generic.DetailView):
 
 
 class CategoryCreate(CreateView):
+    title = "Add Category"
     model = Category
-    fields = ['category_name', 'category_logo']
+    fields = ['category_name',  'category_desc', 'category_logo']
 
 
 class CategoryUpdate(UpdateView):
+    title = "Edit Category"
     model = Category
-    fields = ['category_name', 'category_logo']
+    fields = ['category_name',  'category_desc', 'category_logo']
 
 
 class CategoryDelete(DeleteView):
