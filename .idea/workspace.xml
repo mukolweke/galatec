@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24cc74d5-6bfe-468d-b100-4308244323f2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/mov.mp4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/video/mov.mp4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/video/mov2.mp4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gala/templates/gala/base.html" afterPath="$PROJECT_DIR$/gala/templates/gala/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gala/templates/gala/details.html" afterPath="$PROJECT_DIR$/gala/templates/gala/details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gala/urls.py" afterPath="$PROJECT_DIR$/gala/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gala/views.py" afterPath="$PROJECT_DIR$/gala/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop/models.py" afterPath="$PROJECT_DIR$/shop/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop/templates/shop/products_form.html" afterPath="$PROJECT_DIR$/shop/templates/shop/products_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gala/templates/gala/videos.html" afterPath="$PROJECT_DIR$/gala/templates/gala/videos.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +16,33 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="videos.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gala/templates/gala/videos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="86" lean-forward="false" selection-start-line="11" selection-start-column="86" selection-end-line="11" selection-end-column="86" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <marker date="1513806918739" expanded="false" signature="623:655" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shop.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gala/templates/gala/shop.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="31" column="72" lean-forward="false" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -71,7 +94,6 @@
         <option value="$PROJECT_DIR$/galatec/templates/galatec/chart.html" />
         <option value="$PROJECT_DIR$/gala/templates/gala/dash.html" />
         <option value="$PROJECT_DIR$/static/css/font-awesome.css" />
-        <option value="$PROJECT_DIR$/gala/templates/gala/videos.html" />
         <option value="$PROJECT_DIR$/videos/templates/videos/index.html" />
         <option value="$PROJECT_DIR$/gala/templates/gala/chart.html" />
         <option value="$PROJECT_DIR$/accounts/urls.py" />
@@ -99,6 +121,7 @@
         <option value="$PROJECT_DIR$/gala/templates/gala/details.html" />
         <option value="$PROJECT_DIR$/gala/views.py" />
         <option value="$PROJECT_DIR$/shop/models.py" />
+        <option value="$PROJECT_DIR$/gala/templates/gala/videos.html" />
       </list>
     </option>
   </component>
@@ -150,6 +173,27 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="gala" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="galatec" type="b2602c69:ProjectViewProjectNode" />
+              <item name="galatec" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="galatec" type="b2602c69:ProjectViewProjectNode" />
+              <item name="galatec" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="galatec" type="b2602c69:ProjectViewProjectNode" />
+              <item name="galatec" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="video" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="galatec" type="b2602c69:ProjectViewProjectNode" />
+              <item name="galatec" type="462c0819:PsiDirectoryNode" />
+              <item name="videos" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -187,19 +231,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\school\www\python\galatec\shop\templates\shop" />
-      <recent name="D:\school\www\python\galatec\gala\templates\gala" />
-      <recent name="D:\school\www\python\galatec\static\fonts" />
-      <recent name="D:\school\www\python\galatec\static\css\img" />
-      <recent name="D:\school\www\python\galatec\static\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\school\www\python\galatec\gala\templates\gala" />
       <recent name="D:\school\www\python\galatec\static" />
       <recent name="D:\school\www\python\galatec\static\css" />
       <recent name="D:\school\www\python\galatec\videos\templates\videos" />
       <recent name="D:\school\www\python\galatec\videos\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\school\www\python\galatec\media" />
+      <recent name="D:\school\www\python\galatec\static\video" />
+      <recent name="D:\school\www\python\galatec\shop\templates\shop" />
+      <recent name="D:\school\www\python\galatec\gala\templates\gala" />
+      <recent name="D:\school\www\python\galatec\static\fonts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -265,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513803419496</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="css + products add">
+      <created>1513806292781</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1513806292781</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -276,7 +327,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39772728" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -298,7 +349,8 @@
     <MESSAGE value="login" />
     <MESSAGE value="category model update, file uploads" />
     <MESSAGE value="css updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="css updates" />
+    <MESSAGE value="css + products add" />
+    <option name="LAST_COMMIT_MESSAGE" value="css + products add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -389,13 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gala/templates/gala/videos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -566,29 +611,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gala/templates/gala/shop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="31" column="72" lean-forward="false" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="72" />
-          <folding>
-            <element signature="e#479#485#0" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#1462#1468#0" expanded="true" />
-            <element signature="n#style#0;n#strong#0;n#a#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#1671#1677#0" expanded="true" />
-            <element signature="e#1763#1769#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shop/templates/shop/category_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="27" column="6" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="27" selection-end-column="6" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#922#928#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#922#928#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -638,7 +668,7 @@
         <state relative-caret-position="156">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -658,8 +688,29 @@
         <state relative-caret-position="447">
           <caret line="27" column="82" lean-forward="false" selection-start-line="27" selection-start-column="82" selection-end-line="27" selection-end-column="82" />
           <folding>
-            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gala/templates/gala/videos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="86" lean-forward="false" selection-start-line="11" selection-start-column="86" selection-end-line="11" selection-end-column="86" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <marker date="1513806918739" expanded="false" signature="623:655" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gala/templates/gala/shop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="31" column="72" lean-forward="false" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>

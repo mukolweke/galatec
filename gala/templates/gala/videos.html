@@ -9,12 +9,18 @@
     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;Upload
         Video
     </button>
-    <div class="panel panel-default" style="margin-top:30px;height:300px;">
+    <div class="panel panel-default" style="margin-top:30px;height:400px;padding:20px;">
         <div class="panel-body">
-            <a href="#"> <h1 class="text-center" style="font-size:100px;margin-top:80px;"><span class="glyphicon glyphicon-play-circle"></span> </h1></a>
+            <!--<a href="#"> <h1 class="text-center" style="font-size:100px;margin-top:80px;"><span class="glyphicon glyphicon-play-circle"></span> </h1></a>-->
+
+             <video style="height:350px;width:70%;" controls>
+                 <source src="{% static 'video/mov2.mp4' %}" type="video/mp4">
+                  <source src="movie.ogg" type="video/ogg">
+                 Your browser does not support the video tag.
+            </video>
         </div>
     </div>
-    <div class="panel">
+    <div class="panel" style="margin-top:50px;">
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-4">
