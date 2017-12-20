@@ -1,5 +1,5 @@
-from django.db import models
 from django.core.urlresolvers import reverse
+from django.db import models
 
 
 class Category(models.Model):
@@ -24,7 +24,8 @@ class Products(models.Model):
 
     # redirect
     def get_absolute_url(self):
-        return reverse('gala:detail', kwargs={'pk': self.pk})
+        pk = 5;
+        return reverse('gala:detail', kwargs={'pk': self._get_pk_val(self.category)})
 
     def __str__(self):
         return self.product_name + ', ' + self.product_description + ', ' + self.product_price

@@ -11,17 +11,17 @@
             <h4>Name :&nbsp;{{ category.category_name }}</h4><br/>
             <h4>Desc :&nbsp;{{ category.category_desc }}</h4><br/>
             <h4>Items Count : &nbsp;<span class="badge">42</span></h4><br/>
-            <a href="{% url 'gala:category-edit' category.id %}" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Edit Category
+            <a href="{% url 'gala:category-edit' category.id %}" class="btn btn-primary" id="btn-link-1"><span class="glyphicon glyphicon-pencil"></span>&nbsp; Edit Category
                 </a>
         </div>
         <div class="col-md-8">
             <div class="row">
-                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span>&nbsp; View
+                <a href="{% url 'gala:detail' category.id %}" id="btn-link-2" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span>&nbsp; View
                     All Items
-                </button>
-                <button type="button" class="btn btn-primary-inverse"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add
+                </a>
+                <a href="{% url 'gala:product-add' category.id%}"  class="btn btn-primary-inverse"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add
                     New Items
-                </button>
+                </a>
 
                 <div class="panel panel-default" style="margin-top:50px;">
                     <div class="panel-body">
@@ -51,13 +51,6 @@
                     </div>
                 </div>
 
-                <hr>
-
-                <div class="panel panel-default" style="margin-top:50px;">
-                    <div class="panel-body">
-                        <a href="{% url 'gala:product-add' %}">Add product</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

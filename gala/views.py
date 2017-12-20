@@ -25,12 +25,12 @@ class DetailView(generic.DetailView):
 
 class ProductCreate(CreateView):
     model = Products
-    fields = ['product_name',  'product_description', 'product_count', 'product_price']
+    fields = ['category', 'product_name',  'product_description', 'product_count', 'product_price']
 
 
 class ProductUpdate(UpdateView):
     model = Products
-    fields = ['product_name',  'product_description', 'product_count', 'product_price']
+    fields = ['category', 'product_name',  'product_description', 'product_count', 'product_price']
 
 
 class ProductDelete(DeleteView):

@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^chart/', views.chart, name='chart'),
     url(r'^category/(?P<pk>[0-9]+)$', views.DetailView.as_view(), name='detail'),
 
-    url(r'^add_product/$', views.ProductCreate.as_view(), name='product-add'),
+    url(r'^add_product/(?P<pk>[0-9]+)$', views.ProductCreate.as_view(), name='product-add'),
     # add category /gala/shop/add_category
     url(r'^add_category/$', CategoryCreate.as_view(), name='category-add'),
     # update category /gala/shop/edit_category/2
