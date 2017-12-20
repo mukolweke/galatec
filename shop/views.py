@@ -1,17 +1,33 @@
-from django.shortcuts import render
-from django.http import Http404
-from .models import Category
+from .models import Products,Category
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from django.views import generic
+from django.core.urlresolvers import reverse_lazy
 
 
-# Create your views here.
-def index(request):
-    all_category = Category.objects.all()
-    return render(request, 'shop/index.html', {'all_category': all_category})
+class IndexView(generic.ListView):
+    template_name = 'shop/index.html'
+    context_object_name = 'all_category'
+
+    def get_queryset(self):
+        return Category.objects.all()
 
 
-def detail(request, category_id):
-    try:
-        category = Category.objects.get(pk=category_id)
-    except Category.DoesNotExist:
-        raise Http404("Category Unknown")
-    return render(request, 'shop/detail.html', {'category': category})
+class DetailView(generic.DetailView):
+    model = Category
+    template_name = 'shop/detail.html'
+
+
+class CategoryCreate(CreateView):
+    model = Category
+    fields = ['category_name', 'category_logo']
+
+
+class CategoryUpdate(UpdateView):
+    model = Category
+    fields = ['category_name', 'category_logo']
+
+
+class CategoryDelete(DeleteView):
+    model = Category
+    success_url = reverse_lazy('gala:shop')
+
