@@ -1,12 +1,15 @@
+body {
+    background: white url("../img/background.png");
+}
 a {
     text-decoration:none;
 }
 
 .jumbotron {
     height:480px;
-    background: white url('../img/jumbo.jpg') no-repeat;
+    background: white url('../img/back-bg.png');
     text-align: center;
-    color: #563d7c ;
+    color:white;
 }
 
 .footer{
@@ -142,3 +145,66 @@ background-color:#6E22B5;
   font-size: 13px;
 }
 }
+
+ul{list-style:none;}
+
+ a:link,hover,active,visited {
+            color: #000000;
+            text-decoration:none;
+            cursor: pointer;
+        }
+.btn-primary:hover{
+            color: #337ab7;
+            background-color: #F0F0F0;
+            border-color: #2e6da4;
+}
+.cat-panel{
+            background-color:#F8F8F8;
+            height:250px;
+            padding-left:5px;
+        }
+.add-cat-panel{
+            background-color:#F8F8F8;
+            height:400px;
+        }
+.img-logo{
+            height:150px;
+            max-width:250px;
+            border-color: #2e6da4 1px;
+        }
+.cat-link{color:black;}
+
+        .details-container{
+            margin-top:60px;
+        }
+
+.btn-primary-inverse{
+            color: #337ab7;
+            background-color: #F0F0F0;
+            border-color: #2e6da4;
+        }
+.btn-primary-inverse:hover{
+            color: #F0F0F0;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+        }
+.btn-cat {
+            width:200px;
+        }
+
+#btn-link-1{
+            color:white;
+       }
+#btn-link-1:hover,active{
+            color: #337ab7;
+            background-color: #F0F0F0;
+            border-color: #2e6da4;
+       }
+#btn-link-2{
+            color:white;
+       }
+#btn-link-2:hover,active{
+            color: #337ab7;
+            background-color: #F0F0F0;
+            border-color: #2e6da4;
+       }

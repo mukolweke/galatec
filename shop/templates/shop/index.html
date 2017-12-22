@@ -5,32 +5,38 @@
 {% block content %}
 {% load staticfiles %}
 <div class="container">
-    {% if all_category %}
-        {% for category in all_category %}
-            <ul style="list-style:none;">
+    <div class="panel-body">
+        <div class="col-md-10">
+            <ul>
                 <li>
-                    <div class="panel panel-default" style="margin-top:50px;">
-                        <div class="panel-heading">{{ category.category_name }}</div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img src="{{ category.category_logo.url }}" style="height:200px;width:200px;"/>
-                                </div>
-                                <div class="col-md-6">
-                                    <h2><span id="" class="glyphicon glyphicon-link"></span>&nbsp <a href="{% url 'shop:detail' category.id %}">{{ category.category_name }}</a></h2>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                                        condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                                        euismod. Donec sed odio dui. </p>
+                    <div class="row">
+                        {% if all_category %}
+                        {% for category in all_category %}
+                            <div class="col-md-4">
+                                <div class="panel panel-default cat-panel">
+                                    <div class="panel-body" >
+                                        <div class="row" style="margin-bottom:15px;">
+                                            <a href="{% url 'shop:detail' category.id %}">
+                                                <img src="{{ category.category_logo.url }}" class="img-logo"/>
+                                            </a>
+                                        </div>
+                                        <div class="row" >
+                                            Name: &nbsp; <a href="{% url 'shop:detail' category.id %}" class="cat-link"><strong style="text-decoration:underline">{{ category.category_name }}</strong></a><br/>
+                                            Desc: &nbsp; {{ category.category_desc }}<br/>
+                                            Items: &nbsp;<span class="badge">42</span><br/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        {% endfor %}
+                        {% else %}
+                            <h3>You don't have any Categories</h3>
+                        {% endif %}
                     </div>
                 </li>
             </ul>
-        {% endfor %}
-    {% else %}
-        <h3>You don't have any Categories</h3>
-    {% endif %}
+
+        </div>
 </div>
 
 {% endblock %}
