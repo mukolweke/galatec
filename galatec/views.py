@@ -21,3 +21,7 @@ def registration(request):
 def chart(request):
     count = 0;
     return render(request, 'galatec/chart.html', context=None)
+
+
+def test_page(request):
+    return render(request, 'galatec/test_page.html', context=None)

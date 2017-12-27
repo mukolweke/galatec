@@ -24,6 +24,9 @@ urlpatterns = [
     url(r'^forgot', views.forget, name='forget'),
     url(r'^register', views.registration, name='register'),
 
+    # test page
+    url(r'^test/', views.test_page, name='test'),
+
 
 ]
 
