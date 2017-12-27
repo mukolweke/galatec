@@ -1,16 +1,25 @@
 from django.shortcuts import render
-from shop.models import Category,Products
-from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from shop.models import Category, Products
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views import generic
 from django.core.urlresolvers import reverse_lazy
+from django.db.models import Q
+from django.contrib.auth import authenticate, login
+
+
+IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'gala/dash.html', context=None)
+    if not request.user.is_authenticated():
+        return render(request, '')
+    else:
+        return render(request, 'gala/dash.html', context=None)
 
 
 class ShopView(generic.ListView):
+
     template_name = 'gala/shop.html'
     context_object_name = 'all_category'
 
@@ -44,3 +53,4 @@ def videos(request):
 
 def chart(request):
     return render(request, 'gala/chart.html', context=None)
+

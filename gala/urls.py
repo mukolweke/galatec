@@ -9,6 +9,7 @@ app_name = 'gala'
 urlpatterns = [
     # home page
     url(r'^$', views.index, name='index'),
+
     url(r'^shop/', views.ShopView.as_view(), name='shop'),
     url(r'^videos/', views.videos, name='videos'),
     url(r'^chart/', views.chart, name='chart'),

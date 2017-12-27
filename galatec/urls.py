@@ -20,12 +20,12 @@ urlpatterns = [
     url(r'^videos/', include('videos.urls'), name='videos'),
     url(r'^chart/', views.chart, name='chart'),
     # accounts
-    url(r'^login/', login_view, name='login'),
-    url(r'^forgot', views.forget, name='forget'),
-    url(r'^register', views.registration, name='register'),
-
+    url(r'^login/$', login_view, name='login'),
+    url(r'^forgot/$', views.forget, name='forget'),
+    url(r'^register/$', register_view, name='register'),
+    url(r'^logout/$', logout_view, name='logout'),
     # test page
-    url(r'^test/', views.test_page, name='test'),
+    url(r'^test/$', views.test_page, name='test'),
 
 
 ]

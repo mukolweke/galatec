@@ -1,9 +1,9 @@
-from django import forms
 from django.contrib.auth import (
     authenticate,get_user_model,
     login,logout,
 )
-
+from django import forms
+# from django.contrib.auth.models import User
 
 User = get_user_model()
 
@@ -32,5 +32,12 @@ class UserLoginForm(forms.Form):
             if not user.is_active:
                 raise forms.ValidationError("User is not active")
 
-        return super(UserLoginForm,self).clean()
+        return super(UserLoginForm, self).clean()
 
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password']
