@@ -10,9 +10,6 @@ def login(request):
     return render(request, 'galatec/login.html', context=None)
 
 
-def forget(request):
-    return render(request, 'galatec/forget.html', context=None)
-
 
 def registration(request):
     return render(request, 'galatec/registration.html', context=None)

@@ -15,36 +15,11 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{% url 'index' %}">Galatec Entz</a>
-            </div>
-
-            <!-- Items -->
-            <div class="collapse navbar-collapse" id="topNavBar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="{% block register_active %}{% endblock %}"><a href="{% url 'register' %}">User Register</a>
-                    </li>
-                    <li class="{% block login_active %}{% endblock %}"><a href="{% url 'login' %}">User LogIn</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-
     {% block body %}
 
     {% endblock %}
 
-    <div class="footer">
+    <div class="footer navbar-fixed-bottom">
         <p>&copy; Company 2017</p>
     </div>
     <!--script-->

@@ -28,6 +28,11 @@ def login_view(request):
     return render(request, 'galatec/login.html', {'title': title})
 
 
+def forget_view(request):
+    title = 'Forgot Password'
+    return render(request, 'galatec/forget.html', {'title': title})
+
+
 def logout_view(request):
     logout(request)
     form = UserLoginForm(request.POST or None)
