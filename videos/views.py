@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse_lazy
 
 
 class IndexView(generic.ListView):
-    template_name = 'video/index.html'
+    template_name = 'index.html'
     context_object_name = 'all_video'
 
     def get_queryset(self):

@@ -49,8 +49,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '../galatec/galatec/templates',
-            '../galatec/shop/templates',
+            '../galatec/templates/gala/',
+            '../galatec/templates/shop/',
+            '../galatec/templates/galatec/',
+            '../galatec/templates/videos/',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -114,7 +116,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_ROOT = '/static/'
+STATIC_ROOT = 'D:/school/www/python/static/'
 
 STATIC_URL = '/static/'
 
@@ -123,4 +125,5 @@ STATICFILES_DIRS = (os.path.join('static'), )
 
 # creates image folder where img will be saved
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 MEDIA_URL = '/media/'

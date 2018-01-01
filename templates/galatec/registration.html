@@ -1,4 +1,4 @@
-{% extends 'galatec/base_visitor.html' %}
+{% extends 'base_visitor.html' %}
 
 {% block title %}{{ title }}{% endblock %}
 {% block register_active %}active{% endblock %}
@@ -15,7 +15,7 @@
                     {% endif %}
                     <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
-                        {% include 'galatec/form-template.html' %}
+                        {% include 'form-template.html' %}
                         <div class="form-group" style="margin-top:20px;">
                             <div class="">
                                 <button type="submit" class="btn btn-block btn-success">{{ title }}&nbsp;<span class="glyphicon glyphicon-ok"></span> </button>

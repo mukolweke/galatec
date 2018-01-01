@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse_lazy
 
 
 class IndexView(generic.ListView):
-    template_name = 'shop/index.html'
+    template_name = 'index.html'
     context_object_name = 'all_category'
 
     def get_queryset(self):
@@ -14,7 +14,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Category
-    template_name = 'shop/detail.html'
+    template_name = 'detail.html'
 
 
 class CategoryCreate(CreateView):

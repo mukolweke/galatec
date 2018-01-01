@@ -20,17 +20,17 @@ def login_view(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return render(request, 'galatec/index.html')
+                return render(request, 'index.html')
             else:
-                return render(request, 'galatec/login.html', {'error_message': 'Your account has been disabled'})
+                return render(request, 'login.html', {'error_message': 'Your account has been disabled'})
         else:
-            return render(request, 'galatec/login.html', {'error_message': 'Invalid login'})
-    return render(request, 'galatec/login.html', {'title': title})
+            return render(request, 'login.html', {'error_message': 'Invalid login'})
+    return render(request, 'login.html', {'title': title})
 
 
 def forget_view(request):
     title = 'Forgot Password'
-    return render(request, 'galatec/forget.html', {'title': title})
+    return render(request, 'forget.html', {'title': title})
 
 
 def logout_view(request):
@@ -39,7 +39,7 @@ def logout_view(request):
     context = {
         "form": form,
     }
-    return render(request, 'galatec/index.html', context)
+    return render(request, 'index.html', context)
 
 
 def register_view(request):
@@ -57,5 +57,5 @@ def register_view(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return render(request, 'galatec/index.html', {})
-    return render(request, 'galatec/registration.html', {"form": form, 'title': title})
+                return render(request, 'index.html', {})
+    return render(request, 'registration.html', {"form": form, 'title': title})

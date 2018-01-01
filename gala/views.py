@@ -15,12 +15,12 @@ def index(request):
     if not request.user.is_authenticated():
         return render(request, '')
     else:
-        return render(request, 'gala/dash.html', context=None)
+        return render(request, 'dash.html', context=None)
 
 
 class ShopView(generic.ListView):
 
-    template_name = 'gala/shop.html'
+    template_name = 'shop.html'
     context_object_name = 'all_category'
 
     def get_queryset(self):
@@ -29,7 +29,7 @@ class ShopView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Category
-    template_name = 'gala/details.html'
+    template_name = 'details.html'
 
 
 class ProductCreate(CreateView):
@@ -48,9 +48,9 @@ class ProductDelete(DeleteView):
 
 
 def videos(request):
-    return render(request, 'gala/videos.html', context=None)
+    return render(request, 'videos.html', context=None)
 
 
 def chart(request):
-    return render(request, 'gala/chart.html', context=None)
+    return render(request, 'chart.html', context=None)
 
