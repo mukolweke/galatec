@@ -3,7 +3,23 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html', context=None)
+    return render(request, 'user_home.html', context=None)
+
+
+def about_us(request):
+    return render(request, 'about_us.html', context=None)
+
+
+def terms(request):
+    return render(request, 'terms.html', context=None)
+
+
+def faqs(request):
+    return render(request, 'faqs.html', context=None)
+
+
+def contact_us(request):
+    return render(request, 'contact_us.html', context=None)
 
 
 def login(request):
