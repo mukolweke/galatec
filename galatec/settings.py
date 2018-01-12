@@ -56,6 +56,8 @@ TEMPLATES = [
             '../galatec/templates/shop/',
             '../galatec/templates/galatec/',
             '../galatec/templates/videos/',
+            '../galatec/templates/cart/',
+            '../galatec/templates/orders/',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -130,3 +132,6 @@ STATICFILES_DIRS = (os.path.join('static'), )
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+
+CART_SESSION_ID = 'cart'

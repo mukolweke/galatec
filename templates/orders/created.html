@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Thank you
+{% endblock %}
+
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pdf.css' %}"/>
+    <h1>Thank you</h1>
+    <p>Your order has been successfully completed. Your order number is <strong>{{ order.id }}</strong>.</p>
+{% endblock %}
