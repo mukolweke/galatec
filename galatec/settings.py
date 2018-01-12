@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'gala.apps.GalaConfig',
     'shop.apps.ShopConfig',
     'videos.apps.VideosConfig',
+    'galatec.apps.GalatecConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
