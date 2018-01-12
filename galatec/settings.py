@@ -21,11 +21,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts.apps.AccountsConfig',
-    'gala.apps.GalaConfig',
-    'shop.apps.ShopConfig',
-    'videos.apps.VideosConfig',
-    'galatec.apps.GalatecConfig',
+    'accounts',
+    'gala',
+    'shop',
+    'videos',
+    'galatec',
+    'cart',
+    'orders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

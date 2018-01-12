@@ -34,7 +34,8 @@ urlpatterns = [
     url(r'^logout/$', views.logout_view, name='logout'),
     # test page
     url(r'^test/$', views.test_page, name='test'),
-
+    url(r'^cart/', include('cart.urls', namespace='cart')),
+    url(r'^orders/', include('orders.urls', namespace='orders')),
 
 ]
 
