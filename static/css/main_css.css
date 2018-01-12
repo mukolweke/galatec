@@ -1206,6 +1206,28 @@ tbody td.num {
     text-align:right;
 }
 
+td input[type="submit"] {
+    font-size:12px;
+    padding:4px 10px;
+}
+a:hover {
+    color:#77b6e2;
+}
+
+a.button, input[type="submit"] {
+    color:#fff;
+    margin-top:10px;
+    background:#5cb85c;;
+    border-radius:4px;
+    padding:10px 20px;
+    font-size:14px;
+    border:0;
+}
+
+a.button.light {
+    color:#666;
+    background:#5993bb;
+}
 #shop_form p label, form p input {
     float:left;
     clear:both;
@@ -1235,11 +1257,17 @@ ul.errorlist {
    margin:0;
    padding:0;
 }
+
 #sidebar {
-    width:220px;
+    width:20%;
     padding:30px 20px 0 0;
     float:left;
 }
+
+#product_img{
+    width:150px;height:150px;
+}
+
 
 #sidebar ul{
     margin:0;
@@ -1267,7 +1295,8 @@ ul.errorlist {
 
 #main {
     float:left;
-    width: 96%;
+    width:80%;
+    padding:30px 20px 0 0;
     margin-right:-220px;
     overflow:hidden;
 }
@@ -1287,10 +1316,14 @@ ul.errorlist {
 
 .product-detail {
     text-align:justify;
+    padding: 30px 20px 0 0;
+    height:400px;
 }
 
 .product-detail .price {
     color:#333;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size:28px;
     font-weight:bold;
 }
@@ -1313,10 +1346,30 @@ ul.errorlist {
     float:left;
 }
 
+form p label, form p input {
+    float:left;
+    clear:both;
+}
+
+form p label {
+    font-size:14px;
+    padding-bottom:4px;
+}
+
+form p input {
+    width:300px;
+    font-size:13px;
+    margin-bottom:10px;
+    padding:10px 12px;
+    border:0;
+    /*background:#efefef;*/
+    color:#666;
+    border-radius:4px;
+}
 .order-info {
     float:right;
-    width:300px;
-    /*background:#efefef;*/
+    width:400px;
+    background:#efefef;
     padding:10px 20px;
     color:#333;
     border-bottom:4px solid #5993bb;
@@ -1326,7 +1379,7 @@ ul.errorlist {
     color:#5993bb;
 }
 
-.order-info ul li {
+.order-info ol li {
     margin:0;
     padding:0;
     font-size:14px;

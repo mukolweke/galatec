@@ -1,28 +1,31 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Checkout
+Checkout
 {% endblock %}
 
 {% block content %}
 {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/pdf.css' %}"/>
-    <h1>Checkout</h1>
-    
+<link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/pdf.css' %}"/>
+<div class="container" style="margin-top:70px;">
+    <h2>Checkout Details</h2>
     <div class="order-info">
-        <h3>Your order</h3>
-        <ul>
+        <h4 class="text-info" style="margin-bottom:20px;">Your order</h4>
+        <ol>
             {% for item in cart %}
-                <li>{{ item.quantity }}x {{ item.product.name }} <span>${{ item.total_price }}</span></li>
+            <li>{{ item.quantity }}x {{ item.product.name }} <span>${{ item.total_price }}</span></li><hr>
             {% endfor %}
-        </ul>
+        </ol>
         <p>Total: ${{ cart.get_total_price }}</p>
     </div>
-    
-    <form action="." method="post" class="order-form">
+
+    <form action="." method="post" id="#shop_form" class="order-form">
         {{ form.as_p }}
         <p><input type="submit" value="Place order"></p>
         {% csrf_token %}
     </form>
+</div>
+
+
 {% endblock %}

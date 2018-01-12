@@ -10,14 +10,14 @@ def product_list(request, category_slug=None):
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
-    return render(request, 'product/list.html', {'category': category, 'categories': categories, 'products': products})
+    return render(request, 'list.html', {'category': category, 'categories': categories, 'products': products})
 
 
 def product_detail(request, id, slug):
     product = get_object_or_404(Products, id=id, slug=slug, available=True)
     cart_product_form = CartAddProductForm()
     return render(request,
-                  'product/detail.html', {'product': product, 'cart_product_form': cart_product_form})
+                  'detail.html', {'product': product, 'cart_product_form': cart_product_form})
 
 # class IndexView(generic.ListView):
 #     template_name = 'shop_index.html'

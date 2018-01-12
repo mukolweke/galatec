@@ -1,13 +1,16 @@
+
 {% extends "base.html" %}
 
 {% block title %}
-    Thank you
+Galatec Entz &centerdot; Thank you
 {% endblock %}
 
 {% block content %}
-    {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/pdf.css' %}"/>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/pdf.css' %}"/>
+<div class="container" style="margin-top:70px;height:225px;">
     <h1>Thank you</h1>
     <p>Your order has been successfully completed. Your order number is <strong>{{ order.id }}</strong>.</p>
+</div>
 {% endblock %}

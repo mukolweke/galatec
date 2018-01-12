@@ -32,8 +32,7 @@
                 </li>
                 <li><a href="{% url 'videos:index' %}"><span class="glyphicon glyphicon-film"></span>&nbsp;Videos</a>
                 </li>
-                <li><a href="{% url 'chart' %}"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Chart</a>
-                </li>
+
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
@@ -43,6 +42,17 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 {% if key not in request.session %}
+                <li><a href="{% url 'cart:cart_detail' %}"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;
+                {% with total_items=cart|length %}
+                    {% if cart|length > 0 %}
+                       <!--<a href="{% url 'cart:cart_detail' %}">-->
+                            {{ total_items }} item{{ total_items|pluralize }}, ${{ cart.get_total_price }}
+                        <!--</a>-->
+                    {% else %}
+                        Cart Empty
+                    {% endif %}
+                {% endwith %}
+                </a></li>
                 <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span>&nbsp; &nbsp;Login</a>
                 </li>
                 {% else %}
