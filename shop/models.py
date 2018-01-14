@@ -17,6 +17,9 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_list_by_category', args=[self.slug])
 
+    def get_admin_url(self):
+        return reverse('gala:product_list_by_category', args=[self.slug])
+
 
 class Products(models.Model):
     category = models.ForeignKey(Category, related_name='products')
@@ -39,3 +42,6 @@ class Products(models.Model):
 
     def get_absolute_url(self):
         return reverse('shop:product_detail', args=[self.id, self.slug])
+
+    def get_admin_url(self):
+        return reverse('gala:product_detail', args=[self.id, self.slug])

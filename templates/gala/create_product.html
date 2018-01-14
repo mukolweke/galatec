@@ -1,11 +1,10 @@
 {% extends 'base_admin.html' %}
 
-{% block title %}
-    Admin &CenterDot;{{ product.name }}
-{% endblock %}
+{% block title%}Admin &centerdot; Add Product{% endblock %}
+
 {% load staticfiles %}
 {% block content %}
-<div class="container" style="margin-top:40px;">
+<div class="container" style="margin-top:50px;">
     <div id="sidebar">
         <h3>Categories</h3>
         <ul style="margin-top:10px;">
@@ -24,76 +23,84 @@
                 <a href="{% url 'gala:add_category' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp; Add
                     Category </a>
             </li>
-            <li style="margin-top:10px;">
+            <li style="margin-top:10px;" class="selected">
                 <a href="{% url 'gala:add_product' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp; Add Product
                 </a>
             </li>
         </ul>
     </div>
     <div id="main" class="product-list">
-        <div class="product-detail">
-            <div class="">
-                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
-            </div>
-            <div class="" style="float:left;">
+        <h2>Add Product</h2>
+        <div class="panel panel-default">
+            <div class="panel-body">
                 <form class="form-horizontal" role="form" action="" method="post"
                       enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label class="control-label">
+                        <label class="col-sm-3 control-label">
                             Category Name:
                         </label>
-                        <div class="">
-                            <input class="form-control" style="width:350px;" value="{{ product.category }}" name="category_name" type="text">
+                        <div class="col-sm-9">
+                            <input class="form-control" style="width:350px;" name="category_name" type="text">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">
+                        <label class="col-sm-3 control-label">
                             Product Name:
                         </label>
-                        <div class="">
-                            <input class="form-control" style="width:350px;" value="{{ product.name }}" name="category_slug" type="text">
+                        <div class="col-sm-9">
+                            <input class="form-control" style="width:350px;" name="category_slug" type="text">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">
+                        <label class="col-sm-3 control-label">
                             Product Slug:
                         </label>
-                        <div class="">
-                            <input class="form-control" style="width:350px;" value="{{ product.slug }}" name="category_name" type="text">
+                        <div class="col-sm-9">
+                            <input class="form-control" style="width:350px;" name="category_name" type="text">
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <label class="control-label">
+                        <label class="col-sm-3 control-label">
+                            Product Image:
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" style="width:350px;border:none;" name="category_slug" type="file">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">
                             Product Description:
                         </label>
-                        <div class="">
-                            <textarea class="form-control" style="width:350px;" rows="3">{{ product.description}}</textarea>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" style="width:350px;" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">
+                        <label class="col-sm-3 control-label">
                             Product Prize:
                         </label>
-                        <div class="">
-                            <input class="form-control" style="width:350px;" value="{{ product.price }}" name="category_slug" type="number">
+                        <div class="col-sm-9">
+                            <input class="form-control" style="width:350px;" name="category_slug" type="number">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">
+                        <label class="col-sm-3 control-label">
                             Product Stock:
                         </label>
-                        <div class="">
-                            <input class="form-control" style="width:350px;"  value="{{ product.stock }}" name="category_name" type="number">
+                        <div class="col-sm-9">
+                            <input class="form-control" style="width:350px;" name="category_name" type="number">
                         </div>
                     </div>
+                    <div class="checkbox">
+                        <label class="col-sm-5 control-label">
+                            <input type="checkbox"> Available
+                        </label>
+                    </div>
                     <div class="form-group" style="margin-top:20px;">
-                        <div class="pull-right">
-                            <button type="submit" style="" class="btn btn-info">Edit
-                                Product
-                            </button>
-                            <button type="submit" style="" class="btn btn-danger">Delete
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <button type="submit" style="width:350px;margin-left:10px;" class="btn btn-success">Add
                                 Product
                             </button>
                         </div>

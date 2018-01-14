@@ -1,5 +1,4 @@
 from django.conf.urls import url
-
 from . import views
 
 app_name = 'gala'
@@ -8,16 +7,21 @@ urlpatterns = [
     # home page
     url(r'^$', views.index, name='index'),
 
-    url(r'^shop/', views.ShopView.as_view(), name='shop'),
+    url(r'^shop/', views.shop_view, name='shop'),
     url(r'^videos/', views.videos, name='videos'),
     url(r'^chart/', views.chart, name='chart'),
-    url(r'^category/(?P<pk>[0-9]+)$', views.DetailView.as_view(), name='detail'),
+    url(r'^orders/', views.orders, name='orders'),
 
-    url(r'^add_product/(?P<pk>[0-9]+)$', views.ProductCreate.as_view(), name='product-add'),
+    url(r'^(?P<category_slug>[-\w]+)/$', views.product_list, name='product_list_by_category'),
+    url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', views.product_detail, name='product_detail'),
+    url(r'^add_category/', views.create_category, name='add_category'),
+    url(r'^add_product/', views.create_product, name='add_product'),
+
+    url(r'^add_product/', views.ProductCreate.as_view(), name='product-add'),
     # add category /gala/shop/add_category
-    # url(r'^add_category/$', CategoryCreate.as_view(), name='category-add'),
+    url(r'^add_category/$', views.CategoryCreate.as_view(), name='category-add'),
     # # update category /gala/shop/edit_category/2
-    # url(r'^edit_category/(?P<pk>[0-9]+)$', CategoryUpdate.as_view(), name='category-edit'),
+    url(r'^edit_category/(?P<pk>[0-9]+)$', views.CategoryUpdate.as_view(), name='category-edit'),
     # # delete category /gala/shop/edit_category/2
-    # url(r'^(?P<pk>[0-9]+)/delete/$', CategoryDelete.as_view(), name='delete-category'),
+    url(r'^(?P<pk>[0-9]+)/delete/$', views.CategoryDelete.as_view(), name='delete-category'),
     ]
