@@ -70,12 +70,6 @@ def logout_view(request):
     except KeyError:
         pass
     return render(request, 'index.html', {})
-    # logout(request)
-    # form = UserLoginForm(request.POST or None)
-    # context = {
-    #     "form": form,
-    # }
-
 
 
 def register_view(request):

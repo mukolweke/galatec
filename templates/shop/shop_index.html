@@ -30,39 +30,5 @@
             </div>
         {% endfor %}
     </div>
-    <!--<div class="panel-body">-->
-        <!--<div class="col-md-10">-->
-            <!--<ul>-->
-                <!--<li>-->
-                    <!--<div class="row">-->
-                        <!--{% if all_category %}-->
-                        <!--{% for category in all_category %}-->
-                        <!--<div class="col-md-4">-->
-                            <!--<div class="panel panel-default cat-panel">-->
-                                <!--<div class="panel-body">-->
-                                    <!--<div class="row" style="margin-bottom:15px;">-->
-                                        <!--<a href="{% url 'shop:detail' category.id %}">-->
-                                            <!--<img src="{{ category.category_logo.url }}" class="img-logo"/>-->
-                                        <!--</a>-->
-                                    <!--</div>-->
-                                    <!--<div class="row">-->
-                                        <!--Name: &nbsp; <a href="{% url 'shop:detail' category.id %}"-->
-                                                        <!--class="cat-link"><strong style="text-decoration:underline">{{-->
-                                        <!--category.category_name }}</strong></a><br/>-->
-                                        <!--Desc: &nbsp; {{ category.category_desc }}<br/>-->
-                                        <!--Items: &nbsp;<span class="badge">42</span><br/>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--{% endfor %}-->
-                        <!--{% else %}-->
-                        <!--<h3>You don't have any Categories</h3>-->
-                        <!--{% endif %}-->
-                    <!--</div>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--</div>-->
 </div>
 {% endblock %}

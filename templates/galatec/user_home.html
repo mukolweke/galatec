@@ -5,75 +5,53 @@
 
 {% block content %}
 {% load staticfiles %}
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron jumbo">
-    <div class="container">
+<!-- Main Banner -->
+<div id="carousel-example-generic" class="carousel slide jumbo" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static 'img/jumbo.jpg' %}" alt="...">
+      <div class="carousel-caption">
         <h1 class="text-center" style="margin-top:50px;">Welcome to Gaming World &nbsp;<span
                 class="fa fa-gamepad"></span></h1>
         <h3 class="text-center">- We Broaden your <strong>Gaming</strong> experience -</h3>
+      </div>
     </div>
+    <div class="item">
+      <img src="{% static 'img/jumbo-1.jpg' %}" alt="...">
+      <div class="carousel-caption">
+        <h1 class="text-center" style="margin-top:50px;">Welcome to Gaming World &nbsp;<span
+                class="fa fa-gamepad"></span></h1>
+        <h3 class="text-center">- We Broaden your <strong>Gaming</strong> experience -</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
+<!--//banner-->
+<hr style="border:1px solid black; width:30%;margin-top:50px;">
 <!--service-->
-<!--Featured Section-->
-<section id="features" class="features">
-    <div class="container">
-        <div class="row">
-            <div class="main_features fix roomy-70">
-                <div class="col-md-4">
-                    <div class="features_item sm-m-top-30">
-                        <div class="f_item_icon">
-                            <i class="fa fa-gamepad"></i>
-                        </div>
-                        <div class="f_item_text">
-                            <h3>Best Gaming Offered</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque eleifend
-                                in sit amet mattis volutpat rhoncus.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="features_item sm-m-top-30">
-                        <div class="f_item_icon">
-                            <i class="glyphicon glyphicon-shopping-cart"></i>
-                        </div>
-                        <div class="f_item_text">
-                            <h3>Online Shopping</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque eleifend
-                                in sit amet mattis volutpat rhoncus.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="features_item sm-m-top-30">
-                        <div class="f_item_icon">
-                            <i class="fa fa-sliders"></i>
-                        </div>
-                        <div class="f_item_text">
-                            <h3>Easy to Customize</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque eleifend
-                                in sit amet mattis volutpat rhoncus.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End off row -->
-    </div><!-- End off container -->
-</section><!-- End off Featured Section-->
-<hr style="border:1px solid black; width:30%;">
 <div class="services">
     <div class="container">
-        <div class="service-top">
-            <div class="head_title text-center fix">
-                <h2 class="text-uppercase">Why Galatec Entz</h2>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="head_title text-center fix">
+                    <h2 class="text-uppercase">Our Services</h2>
+                </div>
             </div>
-        </div>
         <div class="services-grid">
             <div class="col-md-6 service-top1">
                 <div class=" ser-grid">
                     <a href="#" class="hi-icon hi-icon-archive glyphicon glyphicon-list" style="color:#48D1CC"> </a>
                 </div>
                 <div class="ser-top">
-                    <h4>Options</h4>
+                    <h4>Online Shopping</h4>
                     <p>
                         We provide you a variety of bus carriers to choose from.
                         If your preferred bus carrier isn't on this site, send them a
@@ -87,7 +65,7 @@
                     <a href="#" class="hi-icon hi-icon-archive glyphicon glyphicon-usd" style="color:#696969"> </a>
                 </div>
                 <div class="ser-top">
-                    <h4>Best Prices</h4>
+                    <h4>Offer Best Prices</h4>
                     <p>
                         The cost to convenience ratio is almost non-existent. Manage your entire booking online at
                         almost no extra cost.
@@ -100,10 +78,10 @@
         <div class="services-grid">
             <div class="col-md-6 service-top1">
                 <div class=" ser-grid">
-                    <a href="#" class="hi-icon hi-icon-archive glyphicon glyphicon-ok" style="color:#48D1CC"> </a>
+                    <a href="#" class="hi-icon hi-icon-archive glyphicon glyphicon-th" style="color:#48D1CC"> </a>
                 </div>
                 <div class="ser-top">
-                    <h4>Awesome Service</h4>
+                    <h4>Offer Repairs</h4>
                     <p>
                         Order for our products anywhere, anytime with a 24/7 dedicated help line to help you if there is
                         a problem.
@@ -129,49 +107,162 @@
         </div>
     </div>
 </div>
-<hr style="border:1px solid black; width:30%;">
-<!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+<hr style="border:1px solid black; width:30%;margin-top:50px;">
 
 <!--Test section-->
-<section id="test" class="test roomy-60 fix">
+<section class="test roomy-60 fix" style="background-color:#f5f9fa;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="head_title text-center fix">
+                    <h2 class="text-uppercase">Our Team</h2>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="staff-img">
+                    <img class="img-thumbnail" src="{% static 'img/work-img1.jpg' %}" alt="">
+                </div>
+                <div class="text-info staff-caption">
+                    <h3 class="text-center">Owner</h3>
+                    <h4 class="text-center">Bramwell Kasamba</h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="staff-img">
+                    <img class="img-thumbnail" src="{% static 'img/work-img2.jpg' %}" alt="">
+                </div>
+                <div class="text-info staff-caption">
+                    <h3 class="text-center">Co-Owner</h3>
+                    <h4 class="text-center">Faith Kasamba</h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="staff-img">
+                    <img class="img-thumbnail" src="{% static 'img/work-img3.jpg' %}" alt="">
+                </div>
+                <div class="text-info staff-caption">
+                    <h3 class="text-center">Staff { Shoppers Paradise }</h3>
+                    <h4 class="text-center">Thuo</h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="staff-img">
+                    <img class="img-thumbnail" src="{% static 'img/work-img4.jpg' %}" alt="">
+                </div>
+                <div class="text-info staff-caption">
+                    <h3 class="text-center">Staff { Shoppers Paradise }</h3>
+                    <h4 class="text-center">Sean Romeo</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:2em;margin-left:10em;">
+            <div class="col-md-3">
+                <div class="staff-img">
+                    <img class="img-thumbnail" src="{% static 'img/work-img1.jpg' %}" alt="">
+                </div>
+                <div class="text-info staff-caption">
+                        <h3 class="text-center">Staff<br> { Shoppers Paradise }</h3>
+                    <h4 class="text-center">Jack </h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="staff-img">
+                    <img class="img-thumbnail" src="{% static 'img/work-img2.jpg' %}" alt="">
+                </div>
+                <div class="text-info staff-caption">
+                    <h3 class="text-center">Staff <br>{ Highway Towers }</h3>
+                    <h4 class="text-center">Remmy</h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="staff-img">
+                    <img class="img-thumbnail" src="{% static 'img/work-img3.jpg' %}" alt="">
+                </div>
+                <div class="text-info staff-caption">
+                    <h3 class="text-center">Staff <br>{ Kiamunyi K2 }</h3>
+                    <h4 class="text-center">Thuo</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+</section>
+<!-- End off test section -->
+<hr style="border:1px solid black; width:30%;margin-top:50px;">
+<!--Test section-->
+<!--location section-->
+<div class="services">
+    <div class="container">
+       <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="head_title text-center fix">
+                    <h2 class="text-uppercase">Our Locations</h2>
+                </div>
+            </div>
+        <div class="grid-at" style="margin-bottom:5em;">
+			<div class="col-md-3 grid-city">
+				<div class="grid-lo">
+						<figure class="effect-layla">
+						<img class=" img-responsive" src="{% static 'img/ce.jpg' %}" alt="img06">
+						<figcaption>
+							<h4>SHOPPERS PARADISE NAKURU</h4>
+						</figcaption>
+					</figure>
+
+				 </div>
+			</div>
+			<div class="col-md-3 grid-city">
+				<div class="grid-lo">
+					<figure class="effect-layla">
+						<img class=" img-responsive" src="{% static 'img/ce1.jpg' %}" alt="img06">
+						<figcaption>
+							<h4>SHOPPERS PARADISE NAKURU</h4>
+						</figcaption>
+					</figure>
+				 </div>
+			</div>
+            <div class="col-md-3 grid-city">
+				<div class="grid-lo">
+					<figure class="effect-layla">
+						<img class=" img-responsive" src="{% static 'img/ce1.jpg' %}" alt="img06">
+						<figcaption>
+							<h4>HIGHWAY TOWERS NAKURU</h4>
+						</figcaption>
+					</figure>
+				 </div>
+			</div>
+            <div class="col-md-3 grid-city">
+				<div class="grid-lo">
+					<figure class="effect-layla">
+						<img class=" img-responsive" src="{% static 'img/ce.jpg' %}" alt="img06">
+						<figcaption>
+							<h4>KIAMUNYI K2 NAKURU</h4>
+						</figcaption>
+					</figure>
+				 </div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+    <!--//location-->
+    </div>
+    </div>
+<hr style="border:1px solid black; width:30%;margin-top:50px;">
+<!--//location section-->
+<section id="test" class="test roomy-60 fix" style="background-color:#f5f9fa;">
     <div class="container">
         <div class="row">
             <div class="main_test fix">
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="head_title text-center fix">
-                        <h2 class="text-uppercase">What Client Say</h2>
+                        <h2 class="text-uppercase">What Customer Say</h2>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="test_item fix">
                         <div class="item_img">
-                            <img class="img-circle" src="{% static 'img/test-img1.jpg' %}" alt=""/>
+                            <img class="img-circle img-responsive" style="width:100px;height:100px;"
+                                 src="{% static 'img/icon-female-black.png' %}" alt=""/>
                             <i class="fa fa-quote-left"></i>
                         </div>
 
@@ -189,12 +280,55 @@
                 <div class="col-md-6">
                     <div class="test_item fix sm-m-top-30">
                         <div class="item_img">
-                            <img class="img-circle" src="{% static 'img/test-img2.jpg' %}" alt=""/>
+                            <img class="img-circle img-responsive" style="width:100px;height:100px;"
+                                 src="{% static 'img/user-male-back.png' %}" alt=""/>
                             <i class="fa fa-quote-left"></i>
                         </div>
 
                         <div class="item_text">
-                            <h3>Sarah Smith</h3>
+                            <h3>John Doe</h3>
+                            <h5 style="margin-top:1em;">envato.com</h5>
+
+                            <p style="margin-top:1em;">Natus voluptatum enim quod necessitatibus quis
+                                expedita harum provident eos obcaecati id culpa
+                                corporis molestias.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="main_test fix">
+                <div class="col-md-6">
+                    <div class="test_item fix">
+                        <div class="item_img">
+                            <img class="img-circle img-responsive" style="width:100px;height:100px;"
+                                 src="{% static 'img/user-male-back.png' %}" alt=""/>
+                            <i class="fa fa-quote-left"></i>
+                        </div>
+
+                        <div class="item_text">
+                            <h3>Walter</h3>
+                            <h5 style="margin-top:1em;">envato.com</h5>
+
+                            <p style="margin-top:1em;">Natus voluptatum enim quod necessitatibus quis
+                                expedita harum provident eos obcaecati id culpa
+                                corporis molestias.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="test_item fix sm-m-top-30">
+                        <div class="item_img">
+                            <img class="img-circle img-responsive" style="width:100px;height:100px;"
+                                 src="{% static 'img/icon-female-black.png' %}" alt=""/>
+                            <i class="fa fa-quote-left"></i>
+                        </div>
+
+                        <div class="item_text">
+                            <h3>Jane Doe</h3>
                             <h5 style="margin-top:1em;">envato.com</h5>
 
                             <p style="margin-top:1em;">Natus voluptatum enim quod necessitatibus quis
@@ -207,7 +341,7 @@
         </div>
     </div>
 </section><!-- End off test section -->
-
+<hr style="border:1px solid black; width:30%;">
 <!-- /container -->
 
 {% endblock %}
