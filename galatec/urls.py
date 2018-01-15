@@ -13,7 +13,9 @@ urlpatterns = [
 
 
     # admin user section
-    url(r'^galaAdmin/', include('gala.urls'), name='gala'),
+    url(r'^gala/', views.login_view, name='gala_login'),
+    url(r'^gala_admin/', include('gala.urls'), name='gala_admin'),
+
     # customer user section
     url(r'^$', views.index, name='index'),
     url(r'^terms/', views.terms, name='terms'),
@@ -26,11 +28,11 @@ urlpatterns = [
     url(r'^chart/', views.chart, name='chart'),
     # accounts
     url(r'^login/$', views.login_view, name='login'),
-    url(r'login_user/$', views.login_user, name='login_user'),
-    url(r'^create_user/', views.create_user, name='create_user'),
+    url(r'^login_user/$', views.login_user, name='login_user'),
+    url(r'^register_user/', views.create_user, name='create_user'),
     url(r'^forgot/$', views.forget_view, name='forget'),
     url(r'^register/$', views.register_view, name='register'),
-    url(r'^logout/$', views.logout_view, name='logout'),
+    url(r'^logout/$', views.logout_user, name='logout'),
     # test page
     url(r'^test/$', views.test_page, name='test'),
     url(r'^cart/', include('cart.urls', namespace='cart')),

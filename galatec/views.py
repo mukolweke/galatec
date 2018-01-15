@@ -6,6 +6,7 @@ from .forms import UserLoginForm, UserForm
 from django.shortcuts import render
 from .models import UserTable
 from django.utils import timezone
+from gala.views import admin_index
 
 
 def index(request):
@@ -44,41 +45,10 @@ def login_view(request):
     return render(request, 'login.html', {'title': title})
 
 
-def login_user(request):
-    username = 'not logged in'
-
-    if request.method == 'POST':
-        myloginform = UserLoginForm(request.POST)
-        if myloginform.is_valid():
-            username = myloginform.clean_message()
-            request.session['username'] = username
-            request.session.set_expiry(60*60*24)
-    else:
-        myloginform = UserLoginForm()
-
-    return render(request, 'user_home.html', {'username': username})
-
-
-def forget_view(request):
-    title = 'Forgot Password'
-    return render(request, 'forget.html', {'title': title})
-
-
-def logout_view(request):
-    try:
-        del request.session['username']
-    except KeyError:
-        pass
-    return render(request, 'index.html', {})
-
-
-def register_view(request):
-    title = 'Register Here'
-    return render(request, 'registration.html', {'title': title})
-
-
 def create_user(request):
-    if request.method == 'POST':
+    form = UserForm(request.POST or None)
+    if form.is_valid():
+        user = form.save(commit=False)
         username = request.POST['username']
         email = request.POST['email']
         phonenumber = request.POST['phonenumber']
@@ -86,7 +56,6 @@ def create_user(request):
         conf_password = request.POST['con-password']
         date_reg = timezone.datetime.now().date()
         if password == conf_password:
-
             UserTable.objects.create(
                 username=username,
                 email=email,
@@ -94,8 +63,70 @@ def create_user(request):
                 password=password,
                 date_reg=date_reg,
             )
-            err_msg = 'User Created, Login'
-            return render(request, 'login.html', {'username': username, 'password': password, 'err_msg': err_msg})
+            success_message = 'User Created, Login'
+            user.set_password(password)
+            user.save()
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    context = {
+                        'username': username,
+                        'password': password,
+                        'success_message': success_message,
+                        'title': 'Login Here',
+                    }
+                    return render(request, 'login.html', context)
         else:
-            err_msg = 'Fill required Fields Correctly'
-            return render(request, 'registration.html', {'err_msg': err_msg})
+            error_message = 'Fill required Fields Correctly'
+            return render(request, 'registration.html', {'error_message': error_message, 'title': 'Register Here'})
+    context = {
+        "form": form,
+        'title': 'Register Here',
+    }
+    return render(request, 'registration.html', context)
+
+
+def login_user(request):
+    title = 'Login Here'
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                request.session['username'] = username
+                request.session.set_expiry(60 * 60 * 24)
+                if username == 'gala_admin':
+                    return render(request, 'dash.html',{})
+                else:
+                    return render(request, 'user_home.html', {})
+            else:
+                return render(request, 'login.html', {'error_message': 'Your account has been disabled', 'title': title})
+        else:
+            return render(request, 'login.html', {'error_message': 'Invalid login', 'title': title})
+    return render(request, 'login.html', {'title': title})
+
+
+def forget_view(request):
+    title = 'Forgot Password'
+    return render(request, 'forget.html', {'title': title})
+
+
+def logout_user(request):
+    logout(request)
+    form = UserLoginForm(request.POST or None)
+    context = {
+        "form": form,
+        'title': 'Login Here'
+    }
+    return render(request, 'login.html', context)
+
+
+def register_view(request):
+    title = 'Register Here'
+    return render(request, 'registration.html', {'title': title})
+
+
+

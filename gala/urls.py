@@ -5,7 +5,7 @@ app_name = 'gala'
 
 urlpatterns = [
     # home page
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.admin_index, name='index'),
 
     url(r'^shop/', views.shop_view, name='shop'),
     url(r'^videos/', views.videos, name='videos'),

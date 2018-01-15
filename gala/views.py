@@ -8,59 +8,78 @@ from cart.forms import CartAddProductForm
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
 
-def index(request):
-    # if not request.user.is_authenticated():
-    #     return render(request, '')
-    # else:
-    return render(request, 'dash.html', context=None)
+def admin_index(request):
+    if not request.user.is_authenticated():
+        return render(request, 'login.html', {'title': 'Login Here'})
+    else:
+        return render(request, 'dash.html', context=None)
 
 
 def shop_view(request, category_slug=None):
-    category = None
-    categories = Category.objects.all()
-    products = Products.objects.filter(available=True)
-    if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
-        products = products.filter(category=category)
-    return render(request, 'shop.html', {'category': category, 'categories': categories, 'products': products})
+    if not request.user.is_authenticated():
+        return render(request, 'login.html', {'title': 'Login Here'})
+    else:
+        category = None
+        categories = Category.objects.all()
+        products = Products.objects.filter(available=True)
+        if category_slug:
+            category = get_object_or_404(Category, slug=category_slug)
+            products = products.filter(category=category)
+        return render(request, 'shop.html', {'category': category, 'categories': categories, 'products': products})
 
 
 def product_list(request, category_slug=None):
-    category = None
-    categories = Category.objects.all()
-    products = Products.objects.filter(available=True)
-    if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
-        products = products.filter(category=category)
-    return render(request, 'shop.html', {'category': category, 'categories': categories, 'products': products})
+    if not request.user.is_authenticated():
+        return render(request, 'login.html', {'title': 'Login Here'})
+    else:
+        category = None
+        categories = Category.objects.all()
+        products = Products.objects.filter(available=True)
+        if category_slug:
+            category = get_object_or_404(Category, slug=category_slug)
+            products = products.filter(category=category)
+        return render(request, 'shop.html', {'category': category, 'categories': categories, 'products': products})
 
 
 def product_detail(request, id, slug, category_slug=None):
-    category = None
-    categories = Category.objects.all()
-    if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
+    if not request.user.is_authenticated():
+        return render(request, 'login.html', {'title': 'Login Here'})
+    else:
+        category = None
+        categories = Category.objects.all()
+        if category_slug:
+            category = get_object_or_404(Category, slug=category_slug)
 
-    product = get_object_or_404(Products, id=id, slug=slug, available=True)
-    cart_product_form = CartAddProductForm()
-    return render(request,
-                  'details.html', {'category': category, 'categories': categories, 'product': product, 'cart_product_form': cart_product_form})
+        product = get_object_or_404(Products, id=id, slug=slug, available=True)
+        cart_product_form = CartAddProductForm()
+        context = {'category': category,
+                   'categories': categories,
+                   'product': product,
+                   'cart_product_form': cart_product_form}
+        return render(request,
+                      'details.html', context)
 
 
 def create_category(request, category_slug=None):
-    category = None
-    categories = Category.objects.all()
-    if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
-    return render(request, 'create_category.html', {'category': category, 'categories': categories})
+    if not request.user.is_authenticated():
+        return render(request, 'login.html', {'title': 'Login Here'})
+    else:
+        category = None
+        categories = Category.objects.all()
+        if category_slug:
+            category = get_object_or_404(Category, slug=category_slug)
+        return render(request, 'create_category.html', {'category': category, 'categories': categories})
 
 
 def create_product(request, category_slug=None):
-    category = None
-    categories = Category.objects.all()
-    if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
-    return render(request, 'create_product.html', {'category': category, 'categories': categories})
+    if not request.user.is_authenticated():
+        return render(request, 'login.html', {'title': 'Login Here'})
+    else:
+        category = None
+        categories = Category.objects.all()
+        if category_slug:
+            category = get_object_or_404(Category, slug=category_slug)
+        return render(request, 'create_product.html', {'category': category, 'categories': categories})
 
 
 class DetailView(generic.DetailView):
@@ -101,13 +120,22 @@ class ProductDelete(DeleteView):
 
 
 def videos(request):
-    return render(request, 'videos.html', context=None)
+    if not request.user.is_authenticated():
+        return render(request, 'login.html', {'title': 'Login Here'})
+    else:
+        return render(request, 'videos.html', context=None)
 
 
 def chart(request):
-    return render(request, 'chart.html', context=None)
+    if not request.user.is_authenticated():
+        return render(request, 'login.html', {'title': 'Login Here'})
+    else:
+        return render(request, 'chart.html', context=None)
 
 
 def orders(request):
-    return render(request, 'chart.html', context=None)
+    if not request.user.is_authenticated():
+        return render(request, 'login.html', {'title': 'Login Here'})
+    else:
+        return render(request, 'chart.html', context=None)
 

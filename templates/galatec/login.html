@@ -11,7 +11,10 @@
                 <div class="panel-heading" style="font-size:23px;"><span class="glyphicon glyphicon-log-in"></span>&nbsp; {{ title }}</div>
                 <div class="panel-body">
                     {% if error_message %}
-                        <p><strong>{{ err_msg }}</strong></p>
+                        <p class="text-danger text-center"><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    {% if success_message %}
+                        <p class="text-success text-center"><strong>{{ success_message }}</strong></p>
                     {% endif %}
                     <form class="form-horizontal" role="form" action="{% url 'login_user'%}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}

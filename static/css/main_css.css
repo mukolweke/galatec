@@ -90,9 +90,9 @@ h1,h2,h3,h4,h5,h6,label,p{
     margin-top:200px;
 }
 .panel-login{
-    margin-top:100px;
-    height: 300px;width:500px;
-    margin-left:420px;
+    margin-top:200px;
+    width:500px;
+    margin-left:450px;
     color:black;
 }
 .panel-heading{
@@ -112,9 +112,9 @@ h1,h2,h3,h4,h5,h6,label,p{
     margin-top:50px;
 }
 .panel-forget{
-    margin-top:100px;
+    margin-top:250px;
     height: 240px;width:500px;
-    margin-left:420px;
+    margin-left:450px;
     color:black;
 }
 
