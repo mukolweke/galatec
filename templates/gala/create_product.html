@@ -8,11 +8,11 @@
     <div id="sidebar">
         <h3>Categories</h3>
         <ul style="margin-top:10px;">
-            <li {% if not category %}class="selected" {% endif %}>
+            <li {% if not category %}class="" {% endif %}>
                 <a href="{% url 'gala:shop' %}">All</a>
             </li>
             {% for c in categories %}
-            <li {% if category.slug == c.slug %} class="selected" {% endif %}>
+            <li {% if category.slug == c.slug %} class="" {% endif %}>
                 <a href="{{ c.get_admin_url }}">{{ c.name }}</a>
             </li>
             {% endfor %}
@@ -33,7 +33,7 @@
         <h2>Add Product</h2>
         <div class="panel panel-default">
             <div class="panel-body">
-                <form class="form-horizontal" role="form" action="" method="post"
+                <form class="form-horizontal" role="form" action="{% url 'gala:product_add' %}" method="post"
                       enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
@@ -41,7 +41,12 @@
                             Category Name:
                         </label>
                         <div class="col-sm-9">
-                            <input class="form-control" style="width:350px;" name="category_name" type="text">
+                            <select class="form-control" style="width:350px;" name="category_name">
+                                <option>--------------</option>
+                                {% for c in categories %}
+                                <option>{{ c.name }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -49,7 +54,7 @@
                             Product Name:
                         </label>
                         <div class="col-sm-9">
-                            <input class="form-control" style="width:350px;" name="category_slug" type="text">
+                            <input class="form-control" style="width:350px;" name="product_name" type="text">
                         </div>
                     </div>
                     <div class="form-group">
@@ -57,7 +62,7 @@
                             Product Slug:
                         </label>
                         <div class="col-sm-9">
-                            <input class="form-control" style="width:350px;" name="category_name" type="text">
+                            <input class="form-control" style="width:350px;" name="product_slug" type="text">
                         </div>
                     </div>
                     <div class="form-group">
@@ -65,7 +70,7 @@
                             Product Image:
                         </label>
                         <div class="col-sm-9">
-                            <input class="form-control" style="width:350px;border:none;" name="category_slug" type="file">
+                            <input class="form-control" style="width:350px;border:none;" name="product_img" type="file">
                         </div>
                     </div>
                     <div class="form-group">
@@ -73,7 +78,7 @@
                             Product Description:
                         </label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" style="width:350px;" rows="3"></textarea>
+                            <textarea class="form-control" style="width:350px;" name="product_desc" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -81,7 +86,7 @@
                             Product Prize:
                         </label>
                         <div class="col-sm-9">
-                            <input class="form-control" style="width:350px;" name="category_slug" type="number">
+                            <input class="form-control" style="width:350px;" name="product_prize" type="number">
                         </div>
                     </div>
                     <div class="form-group">
@@ -89,18 +94,13 @@
                             Product Stock:
                         </label>
                         <div class="col-sm-9">
-                            <input class="form-control" style="width:350px;" name="category_name" type="number">
+                            <input class="form-control" style="width:350px;" name="product_stock" type="number">
                         </div>
-                    </div>
-                    <div class="checkbox">
-                        <label class="col-sm-5 control-label">
-                            <input type="checkbox"> Available
-                        </label>
                     </div>
                     <div class="form-group" style="margin-top:20px;">
                         <div class="col-sm-3"></div>
                         <div class="col-sm-9">
-                            <button type="submit" style="width:350px;margin-left:10px;" class="btn btn-success">Add
+                            <button type="submit" style="width:350px;" class="btn btn-success">Add
                                 Product
                             </button>
                         </div>

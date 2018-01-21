@@ -20,6 +20,9 @@ class Category(models.Model):
     def get_admin_url(self):
         return reverse('gala:product_list_by_category', args=[self.slug])
 
+    def get_product_url(self):
+        return reverse('gala:add_product', args=[self.slug])
+
 
 class Products(models.Model):
     category = models.ForeignKey(Category, related_name='products')

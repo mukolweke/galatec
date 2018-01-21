@@ -53,6 +53,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             '../galatec/templates/gala/',
+            '../galatec/templates/',
             '../galatec/templates/shop/',
             '../galatec/templates/galatec/',
             '../galatec/templates/videos/',
